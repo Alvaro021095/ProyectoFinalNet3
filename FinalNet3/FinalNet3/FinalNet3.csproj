@@ -115,10 +115,44 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contracts\Administracion\IBodegaService.cs" />
+    <Compile Include="Contracts\Administracion\IEstadoCitaService.cs" />
+    <Compile Include="Contracts\Administracion\IEstadoPrescripcionService.cs" />
+    <Compile Include="Contracts\Administracion\IIngresoEconomicoService.cs" />
+    <Compile Include="Contracts\Administracion\ILaboratorioService.cs" />
+    <Compile Include="Contracts\Administracion\IMedicoHorarioService.cs" />
+    <Compile Include="Contracts\Administracion\IProductoService.cs" />
+    <Compile Include="Contracts\Administracion\IRolService.cs" />
+    <Compile Include="Contracts\Administracion\ITipoAfiliacionService.cs" />
+    <Compile Include="Contracts\Administracion\ITipoDocumentoService.cs" />
+    <Compile Include="Contracts\Administracion\ITipoMedicoService.cs" />
     <Compile Include="Contracts\Security\ILoginService.cs" />
+    <Compile Include="Controllers\Administracion\AdministracionController.cs" />
+    <Compile Include="Controllers\Administracion\BodegaController.cs" />
+    <Compile Include="Controllers\Administracion\EstadoCitaController.cs" />
+    <Compile Include="Controllers\Administracion\EstadoPrescripcionController.cs" />
+    <Compile Include="Controllers\Administracion\IngresoEconomicoController.cs" />
+    <Compile Include="Controllers\Administracion\LaboratorioController.cs" />
+    <Compile Include="Controllers\Administracion\ProductoController.cs" />
+    <Compile Include="Controllers\Administracion\RolController.cs" />
+    <Compile Include="Controllers\Administracion\TipoAfiliacionController.cs" />
+    <Compile Include="Controllers\Administracion\TipoDocumentoController.cs" />
+    <Compile Include="Controllers\Administracion\TipoMedicoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Administracion\MedicoHorarioController.cs" />
     <Compile Include="Controllers\Security\SecurityController.cs" />
+    <Compile Include="DTO\Administracion\BodegaDTO.cs" />
+    <Compile Include="DTO\Administracion\EstadoCitaDTO.cs" />
+    <Compile Include="DTO\Administracion\EstadoPrescripcionDTO.cs" />
+    <Compile Include="DTO\Administracion\IngresoEconomicoDTO.cs" />
+    <Compile Include="DTO\Administracion\LaboratorioDTO.cs" />
+    <Compile Include="DTO\Administracion\MedicoHorarioDTO.cs" />
+    <Compile Include="DTO\Administracion\ProductoDTO.cs" />
+    <Compile Include="DTO\Administracion\RolDTO.cs" />
+    <Compile Include="DTO\Administracion\TipoAfiliacionDTO.cs" />
+    <Compile Include="DTO\Administracion\TipoDocumentoDTO.cs" />
+    <Compile Include="DTO\Administracion\TipoMedicoDTO.cs" />
     <Compile Include="DTO\Security\LoginDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -127,6 +161,17 @@
     <Compile Include="Helpers\SessionVerify.cs" />
     <Compile Include="Infraestructure\Connection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Administracion\BodegaService.cs" />
+    <Compile Include="Services\Administracion\EstadoCitaService.cs" />
+    <Compile Include="Services\Administracion\EstadoPrescripcionService.cs" />
+    <Compile Include="Services\Administracion\IngresoEconomicoService.cs" />
+    <Compile Include="Services\Administracion\LaboratorioService.cs" />
+    <Compile Include="Services\Administracion\MedicoHorarioService.cs" />
+    <Compile Include="Services\Administracion\ProductoService.cs" />
+    <Compile Include="Services\Administracion\RolService.cs" />
+    <Compile Include="Services\Administracion\TipoAfiliacionService.cs" />
+    <Compile Include="Services\Administracion\TipoDocumentoService.cs" />
+    <Compile Include="Services\Administracion\TipoMedicoService.cs" />
     <Compile Include="Services\Security\LoginService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +197,17 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\System\Administracion\Bodega.js" />
+    <Content Include="Scripts\System\Administracion\EstadoCita.js" />
+    <Content Include="Scripts\System\Administracion\EstadoPrescripcion.js" />
+    <Content Include="Scripts\System\Administracion\IngresoEconomico.js" />
+    <Content Include="Scripts\System\Administracion\Laboratorio.js" />
+    <Content Include="Scripts\System\Administracion\MedicoHorario.js" />
+    <Content Include="Scripts\System\Administracion\Producto.js" />
+    <Content Include="Scripts\System\Administracion\Rol.js" />
+    <Content Include="Scripts\System\Administracion\TipoAfiliacion.js" />
+    <Content Include="Scripts\System\Administracion\TipoDocumento.js" />
+    <Content Include="Scripts\System\Administracion\TipoMedico.js" />
     <Content Include="Scripts\System\Security\Login.js" />
     <Content Include="Scripts\System\Security\Logout.js" />
     <Content Include="Scripts\_references.js" />
@@ -177,6 +233,17 @@
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\SessionBar.cshtml" />
     <Content Include="Views\Shared\TopBanner.cshtml" />
+    <Content Include="Views\Administracion\Bodega.cshtml" />
+    <Content Include="Views\Administracion\EstadoCita.cshtml" />
+    <Content Include="Views\Administracion\EstadoPrescripcion.cshtml" />
+    <Content Include="Views\Administracion\IngresoEconomico.cshtml" />
+    <Content Include="Views\Administracion\Laboratorio.cshtml" />
+    <Content Include="Views\Administracion\MedicoHorario.cshtml" />
+    <Content Include="Views\Administracion\Producto.cshtml" />
+    <Content Include="Views\Administracion\Rol.cshtml" />
+    <Content Include="Views\Administracion\TipoAfiliacion.cshtml" />
+    <Content Include="Views\Administracion\TipoDocumento.cshtml" />
+    <Content Include="Views\Administracion\TipoMedico.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

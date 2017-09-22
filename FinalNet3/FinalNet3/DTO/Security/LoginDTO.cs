@@ -8,7 +8,7 @@ namespace FinalNet3.DTO.Security
     public class LoginDTO
     {
         public String User { get; set; }
-        public String Password { get; set; }
+        public String Password { get; set; }        
 
         public LoginDTO(String user, String password)
         {
