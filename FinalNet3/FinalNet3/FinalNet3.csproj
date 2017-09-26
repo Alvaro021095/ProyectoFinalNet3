@@ -242,6 +242,8 @@
     <Content Include="Views\Administracion\TipoAfiliacion.cshtml" />
     <Content Include="Views\Administracion\TipoDocumento.cshtml" />
     <Content Include="Views\Administracion\TipoMedico.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
