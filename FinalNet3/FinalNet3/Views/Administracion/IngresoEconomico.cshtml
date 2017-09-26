@@ -1,1 +1,60 @@
-﻿
+﻿@{
+    ViewBag.Title = "Ingresos Economicos";
+}
+
+<script defer src="@Url.Content("~/Scripts/System/Administracion/IngresoEconomico.js")" type="text/javascript"></script>
+
+<table class="contenedorContenido">
+
+    <tr>
+        <td>
+            <h2>Ingresos Economicos</h2>
+        </td>
+    </tr>
+    <tr>
+        <td><input id="txtId" type="hidden" /></td>
+    </tr>
+
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" id="txtNombre" /></td>
+                    <td>Categoria</td>
+                    <td><input type="text" id="txtCategoria" /></td>
+                    <td>Valor Categoria Cita</td>
+                    <td><input type="text" id="txtValorCatCita"></td>
+                    <td>Valor Categoria Medicamento</td>
+                    <td><input type="text" id="txtValorCatMedicamento"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="Guardar" onclick="guardar();" />
+            <input type="button" value="Buscar" onclick="buscar();" />
+            <input type="button" value="Modificar" onclick="guardar();" />
+            <input type="button" value="Eliminar" onclick="eliminar();" />
+            <input type="button" value="Limpiar" onclick="limpiar();" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <br />
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="4">
+            <div id="listado"></div>
+        </td>
+    </tr>
+</table>
