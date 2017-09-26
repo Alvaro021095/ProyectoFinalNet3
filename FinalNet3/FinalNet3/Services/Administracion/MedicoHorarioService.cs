@@ -79,7 +79,7 @@ namespace FinalNet3.Services.Administracion
 
 
 
-        public IList<String> SearchInfo(String nombre)
+        public IList<String> SearchInfo(String horario)
         {
 
             List<String> list = new List<String>();
@@ -98,8 +98,8 @@ namespace FinalNet3.Services.Administracion
 
                     //AÑADIR PARAMETROS AL PROCEDIMIENTO ALMACENADO
                     dp = comm.CreateParameter();
-                    dp.ParameterName = "@Nombre";
-                    dp.Value = nombre;
+                    dp.ParameterName = "@Horario";
+                    dp.Value = horario;
                     comm.Parameters.Add(dp);
 
 

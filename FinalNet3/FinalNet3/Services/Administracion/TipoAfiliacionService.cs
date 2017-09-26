@@ -35,7 +35,7 @@ namespace FinalNet3.Services.Administracion
                     IDbDataParameter dp = comm.CreateParameter();
                     comm.Connection = Conn;
                     comm.CommandType = CommandType.StoredProcedure;
-                    comm.CommandText = "guardarTipoAfiliacion";
+                    comm.CommandText = "guardarTipoAfilicion";
 
 
                     //AÑADIR PARAMETROS AL PROCEDIMIENTO ALMACENADO
