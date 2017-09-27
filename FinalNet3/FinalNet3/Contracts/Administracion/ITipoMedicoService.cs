@@ -8,7 +8,7 @@ namespace FinalNet3.Contracts.Administracion
 {
     interface ITipoMedicoService
     {
-        IList<String> SaveInfo(MedicoHorarioDTO objDTO);
+        IList<String> SaveInfo(TipoMedicoDTO objDTO);
         IList<String> ListInfo();
         IList<String> SearchInfo(String nombre);
         IList<String> DeleteInfo(int id);
