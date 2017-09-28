@@ -4,47 +4,254 @@
 
 <link href="@Url.Content("~/Content/Menu.css")" rel="stylesheet" type="text/css" />
 
+
+
+
 <td class="contenedorMenu">
     <h2>Menu</h2>
 
-    <ul class="menu">        
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <span class="glyphicon glyphicon-folder-close">
+                                    </span>Administración
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-pencil text-primary"></span>
+                                            <a id="goToBodega" href="/Administracion/Bodega">Bodegas</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-flash text-success"></span>
+                                            <a id="goToEstadoCita" href="/Administracion/EstadoCita">Estados Citas</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-file text-info"></span>
+                                            <a id="goToEstadoPrescripcion" href="/Administracion/EstadoPrescripcion">Estados Prescripciones</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToIngresoEconomico" href="/Administracion/IngresoEconomico">Ingresos Economicos</a>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToLaboratorio" href="/Administracion/Laboratorio">Laboratorios</a>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToMedicoHorario" href="/Administracion/MedicoHorario">Horarios Medicos</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToProducto" href="/Administracion/Producto">Productos</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToRol" href="/Administracion/Rol">Roles</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToTipoAfiliacion" href="/Administracion/TipoAfiliacion">Tipos de Afiliacion</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToTipoDocumento" href="/Administracion/TipoDocumento">Tipos Documentos</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-comment text-success"></span>
+                                            <a id="goToTipoMedico" href="/Administracion/TipoMedico">Tipos Medicos</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    <span class="glyphicon glyphicon-th">
+                                    </span>Modules
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <a href="http://www.jquery2dotnet.com">Orders</a> <span class="label label-success">$ 320</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="http://www.jquery2dotnet.com">Invoices</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="http://www.jquery2dotnet.com">Shipments</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="http://www.jquery2dotnet.com">Tex</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                    <span class="glyphicon glyphicon-user">
+                                    </span>Account
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <a href="http://www.jquery2dotnet.com">Change Password</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="http://www.jquery2dotnet.com">Notifications</a> <span class="label label-info">5</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="http://www.jquery2dotnet.com">Import/Export</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
+                                                Delete Account
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                    <span class="glyphicon glyphicon-file">
+                                    </span>Reports
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-usd"></span><a href="http://www.jquery2dotnet.com">Sales</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-user"></span><a href="http://www.jquery2dotnet.com">Customers</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-tasks"></span><a href="http://www.jquery2dotnet.com">Products</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://www.jquery2dotnet.com">Shopping Cart</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+
+    @*<ul class="menu">
         <li>
             <a href="">ADMINISTRACION</a>
             <ul>
                 <li>
-                    <a id="goToBodega" href="/Administracion/Bodega">Bodegas</a>
-                </li> 
-                <li>
-                    <a id="goToEstadoCita" href="/Administracion/EstadoCita">Estados Citas</a>
-                </li>  
-                <li>
-                    <a id="goToEstadoPrescripcion" href="/Administracion/EstadoPrescripcion">Estados Prescripciones</a>
+                   
                 </li>
                 <li>
-                    <a id="goToIngresoEconomico" href="/Administracion/IngresoEconomico">Ingresos Economicos</a>
-                </li>       
-                <li>
-                    <a id="goToLaboratorio" href="/Administracion/Laboratorio">Laboratorios</a>
+                    
                 </li>
                 <li>
-                    <a id="goToMedicoHorario" href="/Administracion/MedicoHorario">Horarios Medicos</a>
+                    
                 </li>
                 <li>
-                    <a id="goToProducto" href="/Administracion/Producto">Productos</a>
+                    
                 </li>
                 <li>
-                    <a id="goToRol" href="/Administracion/Rol">Roles</a>
+                    
                 </li>
                 <li>
-                    <a id="goToTipoAfiliacion" href="/Administracion/TipoAfiliacion">Tipos de Afiliacion</a>
+                    
                 </li>
                 <li>
-                    <a id="goToTipoDocumento" href="/Administracion/TipoDocumento">Tipos Documentos</a>
+                   
                 </li>
                 <li>
-                    <a id="goToTipoMedico" href="/Administracion/TipoMedico">Tipos Medicos</a>
+                    
+                </li>
+                <li>
+                   
+                </li>
+                <li>
+                   
+                </li>
+                <li>
+                   
                 </li>
             </ul>
         </li>
-    </ul>
+    </ul>*@
 </td>
