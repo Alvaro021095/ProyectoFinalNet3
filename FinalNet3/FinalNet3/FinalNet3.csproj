@@ -116,11 +116,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contracts\Administracion\IBodegaService.cs" />
+    <Compile Include="Contracts\Administracion\IDepartamentoService.cs" />
     <Compile Include="Contracts\Administracion\IEstadoCitaService.cs" />
     <Compile Include="Contracts\Administracion\IEstadoPrescripcionService.cs" />
     <Compile Include="Contracts\Administracion\IIngresoEconomicoService.cs" />
     <Compile Include="Contracts\Administracion\ILaboratorioService.cs" />
     <Compile Include="Contracts\Administracion\IMedicoHorarioService.cs" />
+    <Compile Include="Contracts\Administracion\IMunicipioService.cs" />
+    <Compile Include="Contracts\Administracion\IPaisService.cs" />
     <Compile Include="Contracts\Administracion\IProductoService.cs" />
     <Compile Include="Contracts\Administracion\IRolService.cs" />
     <Compile Include="Contracts\Administracion\ITipoAfiliacionService.cs" />
@@ -129,10 +132,13 @@
     <Compile Include="Contracts\Security\ILoginService.cs" />
     <Compile Include="Controllers\Administracion\AdministracionController.cs" />
     <Compile Include="Controllers\Administracion\BodegaController.cs" />
+    <Compile Include="Controllers\Administracion\DepartamentoController.cs" />
     <Compile Include="Controllers\Administracion\EstadoCitaController.cs" />
     <Compile Include="Controllers\Administracion\EstadoPrescripcionController.cs" />
     <Compile Include="Controllers\Administracion\IngresoEconomicoController.cs" />
     <Compile Include="Controllers\Administracion\LaboratorioController.cs" />
+    <Compile Include="Controllers\Administracion\MunicipioController.cs" />
+    <Compile Include="Controllers\Administracion\PaisController.cs" />
     <Compile Include="Controllers\Administracion\ProductoController.cs" />
     <Compile Include="Controllers\Administracion\RolController.cs" />
     <Compile Include="Controllers\Administracion\TipoAfiliacionController.cs" />
@@ -143,11 +149,14 @@
     <Compile Include="Controllers\Administracion\MedicoHorarioController.cs" />
     <Compile Include="Controllers\Security\SecurityController.cs" />
     <Compile Include="DTO\Administracion\BodegaDTO.cs" />
+    <Compile Include="DTO\Administracion\DepartamentoDTO.cs" />
     <Compile Include="DTO\Administracion\EstadoCitaDTO.cs" />
     <Compile Include="DTO\Administracion\EstadoPrescripcionDTO.cs" />
     <Compile Include="DTO\Administracion\IngresoEconomicoDTO.cs" />
     <Compile Include="DTO\Administracion\LaboratorioDTO.cs" />
     <Compile Include="DTO\Administracion\MedicoHorarioDTO.cs" />
+    <Compile Include="DTO\Administracion\MunicipioDTO.cs" />
+    <Compile Include="DTO\Administracion\PaisDTO.cs" />
     <Compile Include="DTO\Administracion\ProductoDTO.cs" />
     <Compile Include="DTO\Administracion\RolDTO.cs" />
     <Compile Include="DTO\Administracion\TipoAfiliacionDTO.cs" />
@@ -162,11 +171,14 @@
     <Compile Include="Infraestructure\Connection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Administracion\BodegaService.cs" />
+    <Compile Include="Services\Administracion\DepartamentoService.cs" />
     <Compile Include="Services\Administracion\EstadoCitaService.cs" />
     <Compile Include="Services\Administracion\EstadoPrescripcionService.cs" />
     <Compile Include="Services\Administracion\IngresoEconomicoService.cs" />
     <Compile Include="Services\Administracion\LaboratorioService.cs" />
     <Compile Include="Services\Administracion\MedicoHorarioService.cs" />
+    <Compile Include="Services\Administracion\MunicipioService.cs" />
+    <Compile Include="Services\Administracion\PaisService.cs" />
     <Compile Include="Services\Administracion\ProductoService.cs" />
     <Compile Include="Services\Administracion\RolService.cs" />
     <Compile Include="Services\Administracion\TipoAfiliacionService.cs" />
@@ -244,6 +256,9 @@
     <Content Include="Views\Administracion\TipoMedico.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Administracion\Pais.cshtml" />
+    <Content Include="Views\Administracion\Departamento.cshtml" />
+    <Content Include="Views\Administracion\Municipio.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
