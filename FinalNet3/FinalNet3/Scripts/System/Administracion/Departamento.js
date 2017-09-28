@@ -35,7 +35,9 @@ function guardar() {
 
                 switch (response) {
                     case "Success":
-                        alert("Operacion exitosa");
+                        $('#myModal').modal('show');
+                        info = "<p>Operacion exitosa</p>";
+                        $('#avisos').append(info);
                         limpiar();
                         listar();
                         break;
@@ -51,7 +53,9 @@ function guardar() {
             }
         });
     } else {
-        alert("Por favor ingresa todos los datossssssssss");
+        $('#myModal').modal('show');
+        info = "<p>Por favor ingresa todos los datos</p>";
+        $('#avisos').append(info);
     }
 }
 

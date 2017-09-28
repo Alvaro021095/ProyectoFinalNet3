@@ -8,15 +8,32 @@
 
 
 
-<div class="sessionBar">
+<div class="container">
+
+    <div class="row clearfix">
+
+
+
+    </div>
     <table class="sessionTabla">
         <tr>
             <td class="sessionUsuario">
-                <strong> Bienvenido </strong> @Html.Raw(HttpContext.Current.Session["USER_NAME"].ToString())
+               <h3><strong> Bienvenido </strong> @Html.Raw(HttpContext.Current.Session["USER_NAME"].ToString())</h3> 
             </td>
             <td class="sessionLogOut">
-                <input type="button" value="salir" onclick="LogOut();">
+                <button type="button" class="btn btn-info" onclick="LogOut();">Salir</button>
+              
             </td>
         </tr>
     </table>
 </div>
+
+
+    @*<div class="container">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </div>*@
+

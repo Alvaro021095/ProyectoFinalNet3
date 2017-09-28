@@ -38,7 +38,7 @@
 
     <!--Se valida si se ha iniciado sesion para añadir o no la clase especificada-->
     <div @((hasSession) ? Html.Raw("class='col-lg-4 col-md-4 col-sm-4 col-xs-4'") : Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12'"))>
-        <div  @((hasSession) ? Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12'") : Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12'  style='margin-left: 10%;'")) >
+        <div  @((hasSession) ? Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12'") : Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12' ")) >
             @{if (hasSession)
             {
                 Html.RenderPartial("MainMenu");
