@@ -210,11 +210,14 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\System\Administracion\Bodega.js" />
+    <Content Include="Scripts\System\Administracion\Departamento.js" />
     <Content Include="Scripts\System\Administracion\EstadoCita.js" />
     <Content Include="Scripts\System\Administracion\EstadoPrescripcion.js" />
     <Content Include="Scripts\System\Administracion\IngresoEconomico.js" />
     <Content Include="Scripts\System\Administracion\Laboratorio.js" />
     <Content Include="Scripts\System\Administracion\MedicoHorario.js" />
+    <Content Include="Scripts\System\Administracion\Municipio.js" />
+    <Content Include="Scripts\System\Administracion\Pais.js" />
     <Content Include="Scripts\System\Administracion\Producto.js" />
     <Content Include="Scripts\System\Administracion\Rol.js" />
     <Content Include="Scripts\System\Administracion\TipoAfiliacion.js" />

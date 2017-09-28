@@ -12,7 +12,7 @@ namespace FinalNet3.Contracts.Administracion
         IList<String> ListInfo();
         IList<String> SearchInfo(String usuario);
         IList<String> DeleteInfo(int id);
-        IList<String> LoadDepartamento();
+        IList<String> LoadDepartamento(int id_pais);
         IList<String> LoadMunicipio(int id_departamento);
 
     }

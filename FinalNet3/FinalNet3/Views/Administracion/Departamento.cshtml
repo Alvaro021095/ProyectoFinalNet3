@@ -1,14 +1,14 @@
 ﻿@{
-    ViewBag.Title = "Bodegas";
+    ViewBag.Title = "Departamentos";
 }
 
-<script defer src="@Url.Content("~/Scripts/System/Administracion/Bodega.js")" type="text/javascript"></script>
+<script defer src="@Url.Content("~/Scripts/System/Administracion/Departamento.js")" type="text/javascript"></script>
 
 <table class="contenedorContenido">
 
     <tr>
         <td>
-            <h2>Bodegas</h2>
+            <h2>Departamentos</h2>
         </td>
     </tr>
     <tr>
@@ -19,8 +19,9 @@
         <td>
             <table>
                 <tr>
+                    <td>Pais</td>
                     <td>
-                        <select id="selPais" onchange="cargarDepartamento();">
+                        <select id="selPais">
                             <option value="-1">Seleccione</option>
                         </select>
                     </td>
