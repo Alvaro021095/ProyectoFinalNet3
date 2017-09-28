@@ -4,7 +4,7 @@
 
 <script defer src="@Url.Content("~/Scripts/System/Administracion/MedicoHorario.js")" type="text/javascript"></script>
 
-<table class="contenedorContenido">
+@*<table class="contenedorContenido">
 
     <tr>
         <td>
@@ -55,4 +55,71 @@
             <div id="listado"></div>
         </td>
     </tr>
-</table>
+</table>*@
+
+<h2>Horario de Medicos</h2>
+<input id="txtId" type="hidden" />
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="row clearfix">
+        <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="">
+                <div class="">
+                    <label>
+                        Nombre
+                    </label>
+                    <input class="form-control"
+                           id="txtNombre" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="">
+                <div class="">
+                    <label>
+                        Descripción
+                    </label>
+                    <textarea class="form-control" rows="4" id="txtDescripcion"></textarea>
+
+                </div>
+            </div>
+        </div>
+        @*<div class="col-sm-3">
+                <div class="">
+                    <div class="form-group form-group-default required" ng-class="{ 'has-error' : peopleForm.last_name.$invalid && !peopleForm.last_name.$pristine }">
+                        <label>
+                            Primer Apellido
+                        </label>
+                        <input class="form-control" name="last_name" ng-model="people.last_name"
+                               data-container="body" data-placement="top" data-content="El primer apellido es requerido" data-trigger="manual" validate-attached-form-element required />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="">
+                    <div class="form-group form-group-default required" ng-class="{ 'has-error' : peopleForm.last_name_two.$invalid && !peopleForm.last_name_two.$pristine }">
+                        <label>
+                            Segundo Apellido
+                        </label>
+                        <input class="form-control" name="last_name_two" ng-model="people.last_name_two" ui-jq="popover" data-container="body" data-placement="top" data-content="El segundo apellido es requerido" data-trigger="manual" validate-attached-form-element required />
+                    </div>
+                </div>
+            </div>*@
+    </div>
+
+</div>
+<br />
+<div class="container">
+
+    <button type="button" class="btn btn-success" onclick="guardar();">Guardar</button>
+    <button type="button" class="btn btn-success" onclick="buscar();">Buscar</button>
+    <button type="button" class="btn btn-success" onclick="guardar();">Modificar</button>
+    <button type="button" class="btn btn-success" onclick="eliminar();">Eliminar</button>
+    <button type="button" class="btn btn-success" onclick="limpiar();">Limpiar</button>
+
+</div>
+
+<br />
+<div class="container">
+    <h2>Lilstado</h2>
+</div>
+<div class="table-responsive" id="listado"></div>

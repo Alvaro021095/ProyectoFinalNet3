@@ -7,10 +7,12 @@
     <title>LOS ROSALES</title>
 
     <!-- Archivos adicionales -->
-    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    
     <link href="@Url.Content("~/Content/General.css")" rel="stylesheet" type="text/css" />
     <script src="@Url.Content("~/Scripts/General/JQuery.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -35,27 +37,32 @@
     @*CONTENT AND MENU*@
 
     <!--Se valida si se ha iniciado sesion para añadir o no la clase especificada-->
-    <table @((hasSession) ? Html.Raw("class='table'") : Html.Raw(""))>
-        <tr>
+    <div @((hasSession) ? Html.Raw("class='col-lg-4 col-md-4 col-sm-4 col-xs-4'") : Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12'"))>
+        <div  @((hasSession) ? Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12'") : Html.Raw("class='col-lg-12 col-md-12 col-sm-12 col-xs-12'  style='margin-left: 10%;'")) >
             @{if (hasSession)
             {
                 Html.RenderPartial("MainMenu");
             }
             else
             {
+
                 Html.RenderPartial("LogIn");
             }
             }
 
-            <td>
-                @*CONTENIDO PRINCIPAL*@
-                @RenderBody()
-            </td>
-        </tr>
-    </table>
+            
+        </div>
+    </div>
 
-    @*FOOTER*@
-    @{Html.RenderPartial("Footer");}
+    <div @((hasSession) ? Html.Raw("class='col-lg-8 col-md-8 col-sm-8 col-xs-8'") : Html.Raw(""))  >
+        @*CONTENIDO PRINCIPAL*@
+        @RenderBody()
+    </div>
+    <div @((hasSession) ? Html.Raw("class='contenedorFooter'") : Html.Raw(""))>
+        @*FOOTER*@
+        @{Html.RenderPartial("Footer");}
+
+   </div>
 
 
 </body>

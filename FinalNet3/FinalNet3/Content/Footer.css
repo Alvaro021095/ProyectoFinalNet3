@@ -2,7 +2,8 @@
 }
 
 
-.contenedorFooter{
-    width:100%;
-    height : auto;        
+.contenedorFooter {
+    width: 100%;
+    height: auto;
+    margin-top: 60%;
 }

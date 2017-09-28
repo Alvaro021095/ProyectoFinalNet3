@@ -159,15 +159,14 @@ function listar() {
                 var cols = parseInt(data.d[qantity - 2]);
                 qantity -= 2;
 
+                var list = "<table class='table table-hover'>";
 
-                var list = "<table class='listado'>";
-
-                list += "<tr>";
+                list += "<thead><tr>";
                 list += "<th>Nombre</th>";
                 list += "<th>Categoria</th>";
                 list += "<th>Valor Cita</th>";
-                list += "<th>Valor Medicamento</th>";
-                list += "</tr>";
+                list += "<thValor Medicamento</th>";
+                list += "</tr></thead>";
 
                 for (var k = 0; k < qantity; k += cols) {
 

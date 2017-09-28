@@ -157,13 +157,12 @@ function listar() {
                 qantity -= 2;
 
 
-                var list = "<table class='listado'>";
+                var list = "<table class='table table-hover'>";
 
-                list += "<tr>";
+                list += "<thead><tr>";
                 list += "<th>Nombre</th>";
-                list += "<th>Direccion</th>";
                 list += "<th>Descripcion</th>";
-                list += "</tr>";
+                list += "</tr></thead>";
 
                 for (var k = 0; k < qantity; k += cols) {
 

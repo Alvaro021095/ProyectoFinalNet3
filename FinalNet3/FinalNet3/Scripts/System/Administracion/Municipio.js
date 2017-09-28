@@ -162,14 +162,14 @@ function listar() {
                 qantity -= 2;
 
 
-                var list = "<table class='listado'>";
+                var list = "<table class='table table-hover'>";
 
-                list += "<tr>";
+                list += "<thead><tr>";
                 list += "<th>Nombre</th>";
                 list += "<th>Descripcion</th>";
                 list += "<th>Pais</th>";
                 list += "<th>Departamento</th>";
-                list += "</tr>";
+                list += "</tr></thead>";
 
                 for (var k = 0; k < qantity; k += cols) {
 
