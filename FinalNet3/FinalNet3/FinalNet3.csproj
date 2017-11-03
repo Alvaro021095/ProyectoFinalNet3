@@ -110,6 +110,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Services\General\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Controllers\Administracion\TipoDocumentoController.cs" />
     <Compile Include="Controllers\Administracion\TipoMedicoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\General\RegistroUsuario.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Administracion\MedicoHorarioController.cs" />
     <Compile Include="Controllers\Security\SecurityController.cs" />
@@ -223,6 +225,7 @@
     <Content Include="Scripts\System\Administracion\TipoAfiliacion.js" />
     <Content Include="Scripts\System\Administracion\TipoDocumento.js" />
     <Content Include="Scripts\System\Administracion\TipoMedico.js" />
+    <Content Include="Scripts\System\General\RegistrarUsuario.js" />
     <Content Include="Scripts\System\Security\Login.js" />
     <Content Include="Scripts\System\Security\Logout.js" />
     <Content Include="Scripts\_references.js" />
@@ -262,6 +265,7 @@
     <Content Include="Views\Administracion\Pais.cshtml" />
     <Content Include="Views\Administracion\Departamento.cshtml" />
     <Content Include="Views\Administracion\Municipio.cshtml" />
+    <Content Include="Views\General\RegistroUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
