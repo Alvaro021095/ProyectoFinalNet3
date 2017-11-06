@@ -1,4 +1,12 @@
-﻿/*Limpia los campos*/
+﻿// Cuando se encuentra listo el doc esto es lo primero que se ejecutara
+$(document).ready(function () {
+    cargarTipoDocumento();
+    cargarPais();
+    cargarTipoPaciente();
+    cargarIngreso();
+});
+
+/*Limpia los campos*/
 function limpiar() {
     $("#txtId").val("");
     $("#txtNombre").val("");
@@ -128,3 +136,252 @@ function buscar() {
 
 
 
+/* Carga en un combo los paises */
+function cargarPais() {
+
+    $.ajax({
+        type: 'POST',
+        url: "/Departamento/LoadPais",
+        data: "",
+        success: function (data) {
+
+            if (data.d.length > 0) {
+
+
+                var qantity = (data.d.length);
+                var rows = parseInt(data.d[qantity - 1]);
+                var cols = parseInt(data.d[qantity - 2]);
+                qantity -= 2;
+
+                var select = document.getElementById("selPais");
+
+                while (select.length > 1) {
+                    select.remove(select.length - 1);
+                }
+
+                var opt = null;
+
+                for (var k = 0; k < qantity; k += cols) {
+                    opt = new Option(data.d[k + 1], data.d[k]);
+                    select.options[select.length] = opt;
+                }
+
+                select.value = -1;
+
+
+            } else {
+                alert("No se encuentra");
+            }
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+        }
+    });
+}
+
+
+function cargarDepartamento(seleccion) {
+
+    var pais = $("#selPais").val();
+
+    if (pais != -1) {
+
+        $.ajax({
+            type: 'POST',
+            url: "/Municipio/LoadDepartamento",
+            data: { id_pais: pais },
+            success: function (data) {
+
+                if (data.d.length > 0) {
+
+                    var qantity = (data.d.length);
+                    var rows = parseInt(data.d[qantity - 1]);
+                    var cols = parseInt(data.d[qantity - 2]);
+                    qantity -= 2;
+
+                    var select = document.getElementById("selDepartamento");
+
+                    while (select.length > 1) {
+                        select.remove(select.length - 1);
+                    }
+
+                    var opt = null;
+
+                    for (var k = 0; k < qantity; k += cols) {
+                        opt = new Option(data.d[k + 1], data.d[k]);
+                        select.options[select.length] = opt;
+                    }
+
+                    if (seleccion) {
+                        $("#selDepartamento").val(seleccion);
+                    } else {
+                        select.value = -1;
+                    }
+
+                } else {
+
+                    var select = document.getElementById("selDepartamento");
+
+                    while (select.length > 1) {
+                        select.remove(select.length - 1);
+                    }
+                }
+
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+            }
+        });
+    }
+}
+
+
+function cargarMunicipio(seleccion) {
+
+    var dep = $("#selDepartamento").val();
+
+    if (pais != -1) {
+
+        $.ajax({
+            type: 'POST',
+            url: "/Municipio/LoadMunicipio",
+            data: { id_departamento: dep },
+            success: function (data) {
+
+                if (data.d.length > 0) {
+
+                    var qantity = (data.d.length);
+                    var rows = parseInt(data.d[qantity - 1]);
+                    var cols = parseInt(data.d[qantity - 2]);
+                    qantity -= 2;
+
+                    var select = document.getElementById("selIdMunicipio");
+
+                    while (select.length > 1) {
+                        select.remove(select.length - 1);
+                    }
+
+                    var opt = null;
+
+                    for (var k = 0; k < qantity; k += cols) {
+                        opt = new Option(data.d[k + 1], data.d[k]);
+                        select.options[select.length] = opt;
+                    }
+
+                    if (seleccion) {
+                        $("#selIdMunicipio").val(seleccion);
+                    } else {
+                        select.value = -1;
+                    }
+
+                } else {
+
+                    var select = document.getElementById("selIdMunicipio");
+
+                    while (select.length > 1) {
+                        select.remove(select.length - 1);
+                    }
+                }
+
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+            }
+        });
+    }
+}
+
+/* Carga en un combo los tipo docuimento */
+function cargarTipoDocumento() {
+
+    $.ajax({
+        type: 'POST',
+        url: "/RegistrarPacienteController/loadTipoDocumento",
+        data: "",
+        success: function (data) {
+
+            if (data.d.length > 0) {
+
+
+                var qantity = (data.d.length);
+                var rows = parseInt(data.d[qantity - 1]);
+                var cols = parseInt(data.d[qantity - 2]);
+                qantity -= 2;
+
+                var select = document.getElementById("selTipoDocumento");
+
+                while (select.length > 1) {
+                    select.remove(select.length - 1);
+                }
+
+                var opt = null;
+
+                for (var k = 0; k < qantity; k += cols) {
+                    opt = new Option(data.d[k + 1], data.d[k]);
+                    select.options[select.length] = opt;
+                }
+
+                select.value = -1;
+
+
+            } else {
+                alert("No se encuentra");
+            }
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+        }
+    });
+}
+
+
+/* Carga en un combo los ingresos */
+function cargarTipoDocumento() {
+
+    $.ajax({
+        type: 'POST',
+        url: "/RegistrarPacienteController/loadIngreso",
+        data: "",
+        success: function (data) {
+
+            if (data.d.length > 0) {
+
+
+                var qantity = (data.d.length);
+                var rows = parseInt(data.d[qantity - 1]);
+                var cols = parseInt(data.d[qantity - 2]);
+                qantity -= 2;
+
+                var select = document.getElementById("selTipoDocumento");
+
+                while (select.length > 1) {
+                    select.remove(select.length - 1);
+                }
+
+                var opt = null;
+
+                for (var k = 0; k < qantity; k += cols) {
+                    opt = new Option(data.d[k + 1], data.d[k]);
+                    select.options[select.length] = opt;
+                }
+
+                select.value = -1;
+
+
+            } else {
+                alert("No se encuentra");
+            }
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+        }
+    });
+}

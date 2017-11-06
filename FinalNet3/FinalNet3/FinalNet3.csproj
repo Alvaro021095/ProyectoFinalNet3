@@ -130,6 +130,7 @@
     <Compile Include="Contracts\Administracion\ITipoAfiliacionService.cs" />
     <Compile Include="Contracts\Administracion\ITipoDocumentoService.cs" />
     <Compile Include="Contracts\Administracion\ITipoMedicoService.cs" />
+    <Compile Include="Contracts\Paciente\IPacienteService.cs" />
     <Compile Include="Contracts\Security\ILoginService.cs" />
     <Compile Include="Controllers\Administracion\AdministracionController.cs" />
     <Compile Include="Controllers\Administracion\BodegaController.cs" />
@@ -149,6 +150,8 @@
     <Compile Include="Controllers\General\RegistroUsuario.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Administracion\MedicoHorarioController.cs" />
+    <Compile Include="Controllers\Paciente\PacienteController.cs" />
+    <Compile Include="Controllers\Paciente\RegistrarPacienteController.cs" />
     <Compile Include="Controllers\Security\SecurityController.cs" />
     <Compile Include="DTO\Administracion\BodegaDTO.cs" />
     <Compile Include="DTO\Administracion\DepartamentoDTO.cs" />
@@ -164,6 +167,7 @@
     <Compile Include="DTO\Administracion\TipoAfiliacionDTO.cs" />
     <Compile Include="DTO\Administracion\TipoDocumentoDTO.cs" />
     <Compile Include="DTO\Administracion\TipoMedicoDTO.cs" />
+    <Compile Include="DTO\Paciente\PacienteDTO.cs" />
     <Compile Include="DTO\Security\LoginDTO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +190,7 @@
     <Compile Include="Services\Administracion\TipoAfiliacionService.cs" />
     <Compile Include="Services\Administracion\TipoDocumentoService.cs" />
     <Compile Include="Services\Administracion\TipoMedicoService.cs" />
+    <Compile Include="Services\Paciente\PacienteService.cs" />
     <Compile Include="Services\Security\LoginService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +231,7 @@
     <Content Include="Scripts\System\Administracion\TipoDocumento.js" />
     <Content Include="Scripts\System\Administracion\TipoMedico.js" />
     <Content Include="Scripts\System\General\RegistrarUsuario.js" />
+    <Content Include="Scripts\System\Paciente\Paciente.js" />
     <Content Include="Scripts\System\Security\Login.js" />
     <Content Include="Scripts\System\Security\Logout.js" />
     <Content Include="Scripts\_references.js" />

@@ -47,5 +47,22 @@ namespace FinalNet3.Controllers.Paciente
         }
 
 
+
+        public ActionResult LoadTipoPaciente()
+        {
+            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
+            IEnumerable<String> info = ContractService.loadTipoDocumento();
+            /*Se para la lista de la respuesta a JSON*/
+            return Json(new { d = info });
+        }
+
+        public ActionResult LoadIngreso()
+        {
+            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
+            IEnumerable<String> info = ContractService.loadIngreso();
+            /*Se para la lista de la respuesta a JSON*/
+            return Json(new { d = info });
+        }
+
     }
 }

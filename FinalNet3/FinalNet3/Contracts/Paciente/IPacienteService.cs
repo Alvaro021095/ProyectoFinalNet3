@@ -13,8 +13,11 @@ namespace FinalNet3.Contracts.Paciente
         IList<String> SaveInfo(PacienteDTO objDTO);
         IList<String> SearchInfo(int idPaciente);
 
-        IList<String> LoadDepartamento(int id_pais);
-        IList<String> LoadMunicipio(int id_departamento);
+        IList<String> loadTipoDocumento();
+
+        IList<String> loadIngreso();
+
+
 
     }
 }

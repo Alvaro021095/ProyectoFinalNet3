@@ -80,5 +80,15 @@ namespace FinalNet3.Controllers.Administracion
             return Json(new { d = res });
         }
 
+
+
+        public ActionResult LoadMunicipio(int id_departamento)
+        {
+            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
+            IEnumerable<String> info = ContractService.LoadMunicipio(id_departamento);
+            /*Se para la lista de la respuesta a JSON*/
+            return Json(new { d = info });
+        }
+
     }
 }
