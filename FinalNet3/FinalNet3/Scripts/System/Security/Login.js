@@ -9,6 +9,9 @@ function validarUsuario() {
     var usuario = $("#txtUser").val();
     var password = $("#txtKey").val();
 
+    console.log(password);
+    
+
     if (usuario != "" && password != "") {
 
         $.ajax({
@@ -72,4 +75,22 @@ function GetURLvar(var_name) {
     /*Determina si pudo o no ser decodificada, dependiendo si existia dicha variable GET*/
     if (pm === null) return undefined;
     return pm[1] || "";
+}
+
+function showPassword() {
+
+    var key_attr = $('#key').attr('type');
+
+    if (key_attr != 'text') {
+
+        $('.checkbox').addClass('show');
+        $('#key').attr('type', 'text');
+
+    } else {
+
+        $('.checkbox').removeClass('show');
+        $('#key').attr('type', 'password');
+
+    }
+
 }

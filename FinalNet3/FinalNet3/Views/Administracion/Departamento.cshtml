@@ -1,14 +1,101 @@
 ﻿@{
-    ViewBag.Title = "Bodegas";
+    ViewBag.Title = "Departamentos";
 }
 
-<script defer src="@Url.Content("~/Scripts/System/Administracion/Bodega.js")" type="text/javascript"></script>
+<script defer src="@Url.Content("~/Scripts/System/Administracion/Departamento.js")" type="text/javascript"></script>
 
-<table class="contenedorContenido">
+<h2>Departamentos</h2>
+<input id="txtId" type="hidden" />
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="row clearfix">
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Nombre
+                    </label>
+                    <input class="form-control"
+                           id="txtNombre" required />
+                </div>
+            </div>
+        </div>
+
+        @*<select id="selPais">
+            <option value="-1">Seleccione</option>
+        </select>*@
+            
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label >Pais</label>
+                    <select class="form-control" id="selPais">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Descripción
+                    </label>
+                    <textarea class="form-control" rows="4" id="txtDescripcion"></textarea>
+
+                </div>
+            </div>
+        </div>
+        @*<div class="col-sm-3">
+                <div class="">
+                    <div class="form-group form-group-default required" ng-class="{ 'has-error' : peopleForm.last_name.$invalid && !peopleForm.last_name.$pristine }">
+                        <label>
+                            Primer Apellido
+                        </label>
+                        <input class="form-control" name="last_name" ng-model="people.last_name"
+                               data-container="body" data-placement="top" data-content="El primer apellido es requerido" data-trigger="manual" validate-attached-form-element required />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="">
+                    <div class="form-group form-group-default required" ng-class="{ 'has-error' : peopleForm.last_name_two.$invalid && !peopleForm.last_name_two.$pristine }">
+                        <label>
+                            Segundo Apellido
+                        </label>
+                        <input class="form-control" name="last_name_two" ng-model="people.last_name_two" ui-jq="popover" data-container="body" data-placement="top" data-content="El segundo apellido es requerido" data-trigger="manual" validate-attached-form-element required />
+                    </div>
+                </div>
+            </div>*@
+    </div>
+
+</div>
+<br />
+<div class="container">
+
+    <button type="button" class="btn btn-success" onclick="guardar();">Guardar</button>
+    <button type="button" class="btn btn-success" onclick="buscar();">Buscar</button>
+    <button type="button" class="btn btn-success" onclick="guardar();">Modificar</button>
+    <button type="button" class="btn btn-success" onclick="eliminar();">Eliminar</button>
+    <button type="button" class="btn btn-success" onclick="limpiar();">Limpiar</button>
+
+</div>
+
+<br />
+<div class="container">
+    <h2>Lilstado</h2>
+</div>
+<div class="table-responsive" id="listado"></div>
+
+
+
+@**@
+
+@*<table class="contenedorContenido">
 
     <tr>
         <td>
-            <h2>Bodegas</h2>
+            <h2>Departamentos</h2>
         </td>
     </tr>
     <tr>
@@ -19,8 +106,9 @@
         <td>
             <table>
                 <tr>
+                    <td>Pais</td>
                     <td>
-                        <select id="selPais" onchange="cargarDepartamento();">
+                        <select id="selPais">
                             <option value="-1">Seleccione</option>
                         </select>
                     </td>
@@ -60,4 +148,30 @@
             <div id="listado"></div>
         </td>
     </tr>
-</table>
+</table>*@
+<div class="container">
+    <!-- <h2>Modal Example</h2>
+      Trigger the modal with a button
+     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                @*<div class="modal-header">*@
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title">Aviso</h1>
+                @*</div>*@
+                <div class="modal-body">
+                    <span id="avisos"></span>
+                </div>
+                <div class="row">
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

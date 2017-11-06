@@ -230,7 +230,7 @@ namespace FinalNet3.Services.Administracion
 
 
 
-        public IList<String> LoadDepartamento()
+        public IList<String> LoadDepartamento(int id_pais)
         {
 
             List<String> list = new List<String>();
@@ -244,7 +244,12 @@ namespace FinalNet3.Services.Administracion
                     IDbDataParameter dp = comm.CreateParameter();
                     comm.Connection = Conn;
                     comm.CommandType = CommandType.StoredProcedure;
-                    comm.CommandText = "cargarDepartamentos";
+                    comm.CommandText = "cargarDepartamento";
+
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@IdPais";
+                    dp.Value = id_pais;
+                    comm.Parameters.Add(dp);
 
                     Conn.Open();
                     IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);

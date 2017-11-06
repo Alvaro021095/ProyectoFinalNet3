@@ -74,5 +74,25 @@ namespace FinalNet3.Controllers.Administracion
             /*Valida si se puede redireccinar la pagina solicitada o si retorna al index*/
             return ReturnViewOrRedirect();
         }
+
+        public ActionResult Pais()
+        {
+            /*Valida si se puede redireccinar la pagina solicitada o si retorna al index*/
+            return ReturnViewOrRedirect();
+        }
+
+        public ActionResult Departamento()
+        {
+            /*Valida si se puede redireccinar la pagina solicitada o si retorna al index*/
+            return ReturnViewOrRedirect();
+        }
+
+        public ActionResult Municipio()
+        {
+            /*Valida si se puede redireccinar la pagina solicitada o si retorna al index*/
+            return ReturnViewOrRedirect();
+        }
+
+        
     }
 }

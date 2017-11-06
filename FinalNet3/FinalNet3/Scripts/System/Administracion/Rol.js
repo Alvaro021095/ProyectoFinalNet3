@@ -30,7 +30,9 @@ function guardar() {
 
                 switch (response) {
                     case "Success":
-                        alert("Operacion exitosa");
+                        $('#myModal').modal('show');
+                        info = "<p>Operacion exitosa</p>";
+                        $('#avisos').append(info);
                         limpiar();
                         listar();
                         break;
@@ -46,7 +48,9 @@ function guardar() {
             }
         });
     } else {
-        alert("Por favor ingresa todos los datos");
+        $('#myModal').modal('show');
+        info = "<p>Por favor ingresa todos los datos</p>";
+        $('#avisos').append(info);
     }
 }
 
@@ -149,12 +153,12 @@ function listar() {
                 qantity -= 2;
 
 
-                var list = "<table class='listado'>";
+                var list = "<table class='table table-hover'>";
 
-                list += "<tr>";
+                list += "<thead><tr>";
                 list += "<th>Nombre</th>";
                 list += "<th>Descripcion</th>";
-                list += "</tr>";
+                list += "</tr></thead>";
 
                 for (var k = 0; k < qantity; k += cols) {
 

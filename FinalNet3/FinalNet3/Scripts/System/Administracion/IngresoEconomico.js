@@ -34,7 +34,9 @@ function guardar() {
 
                 switch (response) {
                     case "Success":
-                        alert("Operacion exitosa");
+                        $('#myModal').modal('show');
+                        info = "<p>Operacion exitosa</p>";
+                        $('#avisos').append(info);
                         limpiar();
                         listar();
                         break;
@@ -50,7 +52,9 @@ function guardar() {
             }
         });
     } else {
-        alert("Por favor ingresa todos los datos");
+        $('#myModal').modal('show');
+        info = "<p>Por favor ingresa todos los datos</p>";
+        $('#avisos').append(info);
     }
 }
 
@@ -159,15 +163,14 @@ function listar() {
                 var cols = parseInt(data.d[qantity - 2]);
                 qantity -= 2;
 
+                var list = "<table class='table table-hover' style='text-aling:center'>";
 
-                var list = "<table class='listado'>";
-
-                list += "<tr>";
+                list += "<thead><tr>";
                 list += "<th>Nombre</th>";
                 list += "<th>Categoria</th>";
                 list += "<th>Valor Cita</th>";
-                list += "<th>Valor Medicamento</th>";
-                list += "</tr>";
+                list += "<thValor Medicamento</th>";
+                list += "</tr></thead>";
 
                 for (var k = 0; k < qantity; k += cols) {
 
