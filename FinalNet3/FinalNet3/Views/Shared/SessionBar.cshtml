@@ -4,9 +4,43 @@
 
 <link href="@Url.Content("~/Content/SessionBar.css")" rel="stylesheet" type="text/css" />
 <script defer src="@Url.Content("~/Scripts/System/Security/Logout.js")" type="text/javascript"></script>
+<link href="@Url.Content("~/Content/estilos_menu.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/menu.js")" type="text/javascript"></script>
 
 
 
+
+
+
+@*<header class="masthead">
+    
+        <div class="overlay">
+            <div class="container">
+                <h1 style="color:white !important">Hospital Los Rosales</h1>
+            </div>
+        </div>
+    
+    <div class="menu_bar">
+        <a href="#" class="bt-menu"><span class="icon-list2"></span>Menú</a>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#"><span class="icon-home"></span>Inicio</a></li>
+            <li><a href="#"><span class="icon-office"></span>Trabajos</a></li>
+            <li class="submenu">
+                <a href="#"><span class="icon-rocket"></span>Proyectos<span class="caret icon-arrow-down6"></span></a>
+                <ul class="children">
+                    <li><a href="#">SubElemento #1 <span class="icon-dot"></span></a></li>
+                    <li><a href="#">SubElemento #2 <span class="icon-dot"></span></a></li>
+                    <li><a href="#">SubElemento #3 <span class="icon-dot"></span></a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span class="icon-earth"></span>Servicios</a></li>
+            <li><a href="#"><span class="icon-mail"></span>Contacto</a></li>
+        </ul>
+    </nav>
+</header>*@
 
 <div class="container">
 
@@ -18,11 +52,11 @@
     <table class="sessionTabla">
         <tr>
             <td class="sessionUsuario">
-               <h3><strong> Bienvenido </strong> @Html.Raw(HttpContext.Current.Session["USER_NAME"].ToString())</h3> 
+                <h3><strong> Bienvenido </strong> @Html.Raw(HttpContext.Current.Session["USER_NAME"].ToString())</h3>
             </td>
             <td class="sessionLogOut">
                 <button type="button" class="btn btn-info" onclick="LogOut();">Salir</button>
-              
+
             </td>
         </tr>
     </table>

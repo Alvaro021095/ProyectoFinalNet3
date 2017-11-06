@@ -1,0 +1,334 @@
+﻿@{
+    ViewBag.Title = "RegistroPaciente";
+}
+
+<script defer src="@Url.Content("~/Scripts/System/Paciente/Paciente.js")" type="text/javascript"></script>
+
+
+<h2>Paciente</h2>
+<input id="txtId" type="hidden" />
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="row clearfix">
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Nombre(s)
+                    </label>
+                    <input class="form-control"
+                           id="txtNombre" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Apellido(s)
+                    </label>
+                    <input class="form-control"
+                           id="txtApellido" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>Tipo Documento</label>
+                    <select class="form-control" id="selIdTipoDocumento">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Documento
+                    </label>
+                    <input class="form-control"
+                           id="txtDocumento" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Fecha Nacimiento
+                    </label>
+                    <input class="form-control"
+                           id="dtFechaNacimiento" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Correo
+                    </label>
+                    <input class="form-control"
+                           id="txtCorreo" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Dirección
+                    </label>
+                    <input class="form-control"
+                           id="txtDireccion" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>País</label>
+                    <select class="form-control" id="selPais" onchange="cargarDepartamento();">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>Departamento</label>
+                    <select class="form-control" id="selDepartamento" onchange="cargarMunicipio();">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>Municipio</label>
+                    <select class="form-control" id="selIdMunicipio">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Estrato
+                    </label>
+                    <input class="form-control"
+                           id="txtEstrato" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Sisbén  
+                    </label>
+                    <input class="form-control"
+                           id="txtSisben" required />
+                </div>
+            </div>
+        </div>
+        
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>Tipo Paciente</label>
+                    <select class="form-control" id="selIdTipoPaciente">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        @*<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>Cotizante</label>
+                    <select class="form-control" id="selIdCotizante">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>*@
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>Ingreso Económico</label>
+                    <select class="form-control" id="selIdIngreso">
+                        <option value="-1">Seleccione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Usuario
+                    </label>
+                    <input class="form-control"
+                           id="txtUsuario" required />
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="">
+                <div class="">
+                    <label>
+                        Password
+                    </label>
+                    <input type="password" value="" name="key" id="txtPassword" class="form-control" placeholder="Password">
+                </div>
+            </div>
+        </div>
+        @*<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="form-group">
+                <label for="key" class="sr-only">Password</label>
+                <input type="password" value="Admin" name="key" id="txtKey" class="form-control" placeholder="Password">
+            </div>
+        </div>*@
+            <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="">
+                    <div class="">
+                        <label>
+                            Descripción
+                        </label>
+                        <textarea class="form-control" rows="4" id="txtDescripcion"></textarea>
+
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-sm-3">
+                <div class="">
+                    <div class="form-group form-group-default required" ng-class="{ 'has-error' : peopleForm.last_name.$invalid && !peopleForm.last_name.$pristine }">
+                        <label>
+                            Primer Apellido
+                        </label>
+                        <input class="form-control" name="last_name" ng-model="people.last_name"
+                               data-container="body" data-placement="top" data-content="El primer apellido es requerido" data-trigger="manual" validate-attached-form-element required />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="">
+                    <div class="form-group form-group-default required" ng-class="{ 'has-error' : peopleForm.last_name_two.$invalid && !peopleForm.last_name_two.$pristine }">
+                        <label>
+                            Segundo Apellido
+                        </label>
+                        <input class="form-control" name="last_name_two" ng-model="people.last_name_two" ui-jq="popover" data-container="body" data-placement="top" data-content="El segundo apellido es requerido" data-trigger="manual" validate-attached-form-element required />
+                    </div>
+                </div>
+            </div>*@
+        </div>
+
+</div>
+<br />
+<div class="container">
+
+    <button type="button" class="btn btn-success" onclick="guardar();">Guardar</button>
+    <button type="button" class="btn btn-success" onclick="buscar();">Buscar</button>
+    <button type="button" class="btn btn-success" onclick="guardar();">Modificar</button>
+    <button type="button" class="btn btn-success" onclick="eliminar();">Eliminar</button>
+    <button type="button" class="btn btn-success" onclick="limpiar();">Limpiar</button>
+
+</div>
+
+<br />
+<div class="container">
+    <h2>Lilstado</h2>
+</div>
+<div class="table-responsive" id="listado"></div>
+
+
+
+@*<table class="contenedorContenido">
+
+    <tr>
+        <td>
+            <h2>Bodegas</h2>
+        </td>
+    </tr>
+    <tr>
+        <td><input id="txtId" type="hidden" /></td>
+    </tr>
+
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" id="txtNombre" /></td>
+                    <td>Direccion</td>
+                    <td><input type="text" id="txtDireccion" /></td>
+                    <td>Descripcion</td>
+                    <td>
+                        <textarea id="txtDescripcion"></textarea>
+                    </td>
+
+
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="Guardar" onclick="guardar();" />
+            <input type="button" value="Buscar" onclick="buscar();" />
+            <input type="button" value="Modificar" onclick="guardar();" />
+            <input type="button" value="Eliminar" onclick="eliminar();" />
+            <input type="button" value="Limpiar" onclick="limpiar();" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <br />
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="4">
+            <div id="listado"></div>
+        </td>
+    </tr>
+</table>*@
+<div class="container">
+    <!-- <h2>Modal Example</h2>
+      Trigger the modal with a button
+     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                @*<div class="modal-header">*@
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title">Aviso</h1>
+                @*</div>*@
+                <div class="modal-body">
+                    <span id="avisos"></span>
+                </div>
+                <div class="row">
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

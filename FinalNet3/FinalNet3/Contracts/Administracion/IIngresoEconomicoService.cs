@@ -14,5 +14,6 @@ namespace FinalNet3.Contracts.Administracion
         IList<String> SearchInfo(String nombre);
         IList<String> DeleteInfo(int id);
 
+        IList<String> LoadIngresoEconomico();
     }
 }

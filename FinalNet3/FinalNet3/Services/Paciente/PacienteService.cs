@@ -186,81 +186,27 @@ namespace FinalNet3.Services.Paciente
         }
 
 
-        public IList<String> loadTipoDocumento()
+
+
+
+        public IList<string> LoadDepartamento(int id_pais)
         {
-            List<String> list = new List<String>();
-
-            try
-            {
-                using (Conn = new Connection().Conexion)
-                {
-
-                    IDbCommand comm = Conn.CreateCommand();
-                    IDbDataParameter dp = comm.CreateParameter();
-                    comm.Connection = Conn;
-                    comm.CommandType = CommandType.StoredProcedure;
-                    comm.CommandText = "cargarTipoDocumento";                    
-
-
-                    Conn.Open();
-                    IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
-                    int columns = dr.FieldCount;
-
-                    while (dr.Read())
-                    {
-                        for (int i = 0; i < columns; i++)
-                        {
-                            list.Add(dr.GetValue(i).ToString().Trim());
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                list.Add(String.Format("Error: {0}", ex.Message));
-            }
-
-            return list;
+            throw new NotImplementedException();
         }
 
-
-        public IList<String> loadIngreso()
+        public IList<string> LoadMunicipio(int id_departamento)
         {
-            List<String> list = new List<String>();
-
-            try
-            {
-                using (Conn = new Connection().Conexion)
-                {
-
-                    IDbCommand comm = Conn.CreateCommand();
-                    IDbDataParameter dp = comm.CreateParameter();
-                    comm.Connection = Conn;
-                    comm.CommandType = CommandType.StoredProcedure;
-                    comm.CommandText = "cargarIngreso";
-
-
-                    Conn.Open();
-                    IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
-                    int columns = dr.FieldCount;
-
-                    while (dr.Read())
-                    {
-                        for (int i = 0; i < columns; i++)
-                        {
-                            list.Add(dr.GetValue(i).ToString().Trim());
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                list.Add(String.Format("Error: {0}", ex.Message));
-            }
-
-            return list;
+            throw new NotImplementedException();
         }
 
+        public IList<string> loadTipoDocumento()
+        {
+            throw new NotImplementedException();
+        }
 
+        public IList<string> loadIngreso()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

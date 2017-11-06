@@ -1,9 +1,10 @@
-﻿// Cuando se encuentra listo el doc esto es lo primero que se ejecutara
+﻿
 $(document).ready(function () {
-    cargarTipoDocumento();
+   // listar();
     cargarPais();
+    cargarTipoDocumento();
     cargarTipoPaciente();
-    cargarIngreso();
+    cargarIngresoEconomico();
 });
 
 /*Limpia los campos*/
@@ -41,7 +42,7 @@ function guardar() {
     var password = $("#txtPassword").val();
     var estrato = $("#txtEstrato").val();
     var sisben = $("#txtSisben").val();
-    var id_cotizante = $("#selIdCotizante").val();
+    var id_cotizante = 0;
     var id_tipo_paciente = $("#selIdTipoPaciente").val();
     var id_ingreso = $("#selIdIngreso").val();
 
@@ -134,9 +135,6 @@ function buscar() {
     }
 }
 
-
-
-/* Carga en un combo los paises */
 function cargarPais() {
 
     $.ajax({
@@ -180,7 +178,6 @@ function cargarPais() {
         }
     });
 }
-
 
 function cargarDepartamento(seleccion) {
 
@@ -241,14 +238,14 @@ function cargarDepartamento(seleccion) {
 
 function cargarMunicipio(seleccion) {
 
-    var dep = $("#selDepartamento").val();
+    var depto = $("#selDepartamento").val();
 
-    if (pais != -1) {
+    if (depto != -1) {
 
         $.ajax({
             type: 'POST',
             url: "/Municipio/LoadMunicipio",
-            data: { id_departamento: dep },
+            data: { id_departamento: depto },
             success: function (data) {
 
                 if (data.d.length > 0) {
@@ -295,12 +292,13 @@ function cargarMunicipio(seleccion) {
     }
 }
 
-/* Carga en un combo los tipo docuimento */
+
+
 function cargarTipoDocumento() {
 
     $.ajax({
         type: 'POST',
-        url: "/RegistrarPacienteController/loadTipoDocumento",
+        url: "/TipoDocumento/LoadTipoDocumento",
         data: "",
         success: function (data) {
 
@@ -312,7 +310,7 @@ function cargarTipoDocumento() {
                 var cols = parseInt(data.d[qantity - 2]);
                 qantity -= 2;
 
-                var select = document.getElementById("selTipoDocumento");
+                var select = document.getElementById("selIdTipoDocumento");
 
                 while (select.length > 1) {
                     select.remove(select.length - 1);
@@ -341,12 +339,11 @@ function cargarTipoDocumento() {
 }
 
 
-/* Carga en un combo los ingresos */
-function cargarTipoDocumento() {
+function cargarTipoPaciente() {
 
     $.ajax({
         type: 'POST',
-        url: "/RegistrarPacienteController/loadIngreso",
+        url: "/TipoAfiliacion/LoadTipoPaciente",
         data: "",
         success: function (data) {
 
@@ -358,7 +355,52 @@ function cargarTipoDocumento() {
                 var cols = parseInt(data.d[qantity - 2]);
                 qantity -= 2;
 
-                var select = document.getElementById("selTipoDocumento");
+                var select = document.getElementById("selIdTipoPaciente");
+
+                while (select.length > 1) {
+                    select.remove(select.length - 1);
+                }
+
+                var opt = null;
+
+                for (var k = 0; k < qantity; k += cols) {
+                    opt = new Option(data.d[k + 1], data.d[k]);
+                    select.options[select.length] = opt;
+                }
+
+                select.value = -1;
+
+
+            } else {
+                alert("No se encuentra");
+            }
+
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+        }
+    });
+}
+
+
+function cargarIngresoEconomico() {
+
+    $.ajax({
+        type: 'POST',
+        url: "/IngresoEconomico/LoadIngresoEconomico",
+        data: "",
+        success: function (data) {
+
+            if (data.d.length > 0) {
+
+
+                var qantity = (data.d.length);
+                var rows = parseInt(data.d[qantity - 1]);
+                var cols = parseInt(data.d[qantity - 2]);
+                qantity -= 2;
+
+                var select = document.getElementById("selIdIngreso");
 
                 while (select.length > 1) {
                     select.remove(select.length - 1);

@@ -21,7 +21,7 @@ namespace FinalNet3.Controllers.Paciente
         {
             /*Se define el DTO (Clase que solo define datos, no funciones que lo diferencia del modelo)*/
             PacienteDTO objDTO = new PacienteDTO(id, nombre, apellido, documento, correo, fecha_nacimiento, idTipoDoc,
-                idMunicipio, usuario, password, estrato, sisben, idCotizante, idTipoPac, idIngreso);
+                idMunicipio, usuario, password, estrato, sisben, 0, idTipoPac, idIngreso);
             /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
             IEnumerable<String> info = ContractService.SaveInfo(objDTO);
             /*Lista temporal que contendra la respuesta que se le dara al cliente*/
@@ -46,23 +46,6 @@ namespace FinalNet3.Controllers.Paciente
             return Json(new { d = info });
         }
 
-
-
-        public ActionResult LoadTipoPaciente()
-        {
-            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
-            IEnumerable<String> info = ContractService.loadTipoDocumento();
-            /*Se para la lista de la respuesta a JSON*/
-            return Json(new { d = info });
-        }
-
-        public ActionResult LoadIngreso()
-        {
-            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
-            IEnumerable<String> info = ContractService.loadIngreso();
-            /*Se para la lista de la respuesta a JSON*/
-            return Json(new { d = info });
-        }
 
     }
 }

@@ -73,5 +73,14 @@ namespace FinalNet3.Controllers.Administracion
         }
 
 
+        public ActionResult LoadTipoDocumento()
+        {
+            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
+            IEnumerable<String> info = ContractService.LoadTipoDocumento();
+            /*Se para la lista de la respuesta a JSON*/
+            return Json(new { d = info });
+        }
+
+
     }
 }
