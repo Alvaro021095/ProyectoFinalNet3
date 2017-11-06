@@ -130,3 +130,37 @@ C:\Users\USUARIO WINDOWS\Source\Repos\ProyectoFinalNet32\FinalNet3\FinalNet3\bin
 C:\Users\USUARIO WINDOWS\Source\Repos\ProyectoFinalNet32\FinalNet3\FinalNet3\obj\Debug\FinalNet3.csprojResolveAssemblyReference.cache
 C:\Users\USUARIO WINDOWS\Source\Repos\ProyectoFinalNet32\FinalNet3\FinalNet3\obj\Debug\FinalNet3.dll
 C:\Users\USUARIO WINDOWS\Source\Repos\ProyectoFinalNet32\FinalNet3\FinalNet3\obj\Debug\FinalNet3.pdb
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\FinalNet3.dll.config
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\FinalNet3.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\FinalNet3.pdb
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\Antlr3.Runtime.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\Newtonsoft.Json.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Helpers.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Mvc.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Optimization.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Razor.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.WebPages.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.WebPages.Razor.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\WebGrease.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Helpers.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Mvc.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Optimization.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.Razor.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.WebPages.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\System.Web.WebPages.Razor.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\Newtonsoft.Json.xml
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\Antlr3.Runtime.pdb
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\es\System.Web.Helpers.resources.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\es\System.Web.Mvc.resources.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\es\System.Web.Optimization.resources.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\es\System.Web.Razor.resources.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\es\System.Web.WebPages.resources.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\obj\Debug\FinalNet3.csprojResolveAssemblyReference.cache
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\obj\Debug\FinalNet3.csproj.CoreCompileInputs.cache
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\obj\Debug\FinalNet3.dll
+C:\Users\jj-mb\Source\Repos\ProyectoFinalNet3\FinalNet3\FinalNet3\obj\Debug\FinalNet3.pdb
