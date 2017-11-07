@@ -47,5 +47,32 @@ namespace FinalNet3.Controllers.Paciente
         }
 
 
+
+        public ActionResult CobijarUsuario(int idPaciente, String documento)
+        {
+            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
+            IEnumerable<String> info = ContractService.cobijarUsuario(idPaciente,documento);
+            /*Lista temporal que contendra la respuesta que se le dara al cliente*/
+            IList<String> res = new List<String>();
+
+            /*Se valida si la consulta SQL retorno valores*/
+            if (info != null && info.Count() > 0)
+            {
+                res.Add("Status");
+                res.Add("Success");
+            }
+            /*Se para la lista de la respuesta a JSON*/
+            return Json(new { d = res });
+        }
+
+
+        public ActionResult obtenerIdPaciente(String usuario)
+        {
+            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
+            IEnumerable<String> info = ContractService.obtenerIdPaciente(usuario);
+            /*Lista temporal que contendra la respuesta que se le dara al cliente*/
+            return Json(new { d = info });
+        }
+
     }
 }

@@ -17,6 +17,10 @@ namespace FinalNet3.Contracts.Paciente
 
         IList<String> loadIngreso();
 
+        IList<String> cobijarUsuario(int idPaciente, String documento);
+
+        IList<String> obtenerIdPaciente(String usuario);
+
 
 
     }
