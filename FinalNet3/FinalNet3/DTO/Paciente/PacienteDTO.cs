@@ -35,7 +35,7 @@ namespace FinalNet3.DTO.Paciente
             this.documento = Documento;
             this.correo = Correo;
             this.fecha_nacimiento = Fecha;
-            this.idTipoDocumento = idTipoDocumento;
+            this.idTipoDocumento = IdTipoDoc;
             this.idMunicipio = IdMunicipio;
             this.usuario = Usuario;
             this.password = Password;

@@ -37,7 +37,7 @@ function guardar() {
     var correo = $("#txtCorreo").val();
     var fecha_nacimiento = $("#dtFechaNacimiento").val();
     var id_tipo_doc = $("#selIdTipoDocumento").val();
-    var id_municipio = $("#selId_Municipio").val();
+    var id_municipio = $("#selIdMunicipio").val();
     var usuario = $("#txtUsuario").val();
     var password = $("#txtPassword").val();
     var estrato = $("#txtEstrato").val();
@@ -45,6 +45,28 @@ function guardar() {
     var id_cotizante = 0;
     var id_tipo_paciente = $("#selIdTipoPaciente").val();
     var id_ingreso = $("#selIdIngreso").val();
+
+    console.log('jefry');
+    console.log(id);
+    console.log(nombre);
+    console.log(apellido);
+    console.log(documento);
+    console.log(correo);
+    console.log(fecha_nacimiento);
+    console.log(id_tipo_doc);
+    console.log(id_municipio);
+    console.log(usuario);
+    console.log(password);
+    console.log(estrato);
+    console.log(sisben);
+    console.log(id_cotizante);
+    console.log(id_tipo_paciente);
+    console.log(id_ingreso);
+
+    //return;
+
+    console.log(id_municipio);
+    
 
     if (nombre != "" && apellido != "" && documento != "" && correo != "" && fecha_nacimiento != "" &&
         id_tipo_doc != -1 && id_municipio != -1 && usuario != "" && password != "" && estrato != -1 &&
