@@ -199,6 +199,7 @@
     <Content Include="Content\Banner.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\estilos_menu.css" />
     <Content Include="Content\Footer.css" />
     <Content Include="Content\General.css" />
     <Content Include="Content\Login.css" />
@@ -216,7 +217,10 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\login.js" />
+    <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Pluggins\EasyAutocomplete\easy-autocomplete.min.css" />
+    <Content Include="Scripts\Pluggins\EasyAutocomplete\jquery.easy-autocomplete.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\System\Administracion\Bodega.js" />
@@ -235,6 +239,7 @@
     <Content Include="Scripts\System\Administracion\TipoMedico.js" />
     <Content Include="Scripts\System\General\RegistrarUsuario.js" />
     <Content Include="Scripts\System\Paciente\Paciente.js" />
+    <Content Include="Scripts\System\Paciente\prueba.js" />
     <Content Include="Scripts\System\Security\Login.js" />
     <Content Include="Scripts\System\Security\Logout.js" />
     <Content Include="Scripts\_references.js" />
@@ -275,6 +280,9 @@
     <Content Include="Views\Administracion\Departamento.cshtml" />
     <Content Include="Views\Administracion\Municipio.cshtml" />
     <Content Include="Views\General\RegistroUsuario.cshtml" />
+    <Content Include="Views\Paciente\RegistroPaciente.cshtml" />
+    <Content Include="Views\Paciente\BuscarPaciente.cshtml" />
+    <Content Include="Scripts\Pluggins\EasyAutocomplete\maps\easy-autocomplete.min.css.map" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
