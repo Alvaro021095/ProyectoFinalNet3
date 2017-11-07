@@ -44,29 +44,7 @@ function guardar() {
     var sisben = $("#txtSisben").val();
     var id_cotizante = 0;
     var id_tipo_paciente = $("#selIdTipoPaciente").val();
-    var id_ingreso = $("#selIdIngreso").val();
-
-    console.log('jefry');
-    console.log(id);
-    console.log(nombre);
-    console.log(apellido);
-    console.log(documento);
-    console.log(correo);
-    console.log(fecha_nacimiento);
-    console.log(id_tipo_doc);
-    console.log(id_municipio);
-    console.log(usuario);
-    console.log(password);
-    console.log(estrato);
-    console.log(sisben);
-    console.log(id_cotizante);
-    console.log(id_tipo_paciente);
-    console.log(id_ingreso);
-
-    //return;
-
-    console.log(id_municipio);
-    
+    var id_ingreso = $("#selIdIngreso").val();    
 
     if (nombre != "" && apellido != "" && documento != "" && correo != "" && fecha_nacimiento != "" &&
         id_tipo_doc != -1 && id_municipio != -1 && usuario != "" && password != "" && estrato != -1 &&
@@ -448,4 +426,78 @@ function cargarIngresoEconomico() {
             alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
         }
     });
+}
+
+
+function obtenerIdPaciente() {
+    
+
+    var usuario = $("#txtUsuario").val();
+
+    if (usuario != "") {
+        $.ajax({
+            type: 'POST',
+            url: "/RegistrarPaciente/obtenerIdPaciente",
+            data: {
+                usuario: usuario
+            },
+            success: function (data) {
+
+                if (data.d.length > 0) {
+                    Session["idPaciente"] = data.d[0];
+                } else {
+                    alert("No se encuentra")
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+            }
+        });
+    Session["idPaciente"] = model.UserName;
+
+}
+
+/* Acobijar un usuario beneficiario */
+function cobijarUsuario() {
+
+    var idPaciente = (Session["idPaciente"]);
+    var documento = $("#txtDocumento").val();
+
+    if (idPaciente > 0 && documento != "" ) {
+        $.ajax({
+            type: 'POST',
+            url: "/RegistrarPaciente/CobijarUsuario",
+            data: {
+                idPaciente: idPaciente, documento: documento
+            },
+            success: function (data) {
+
+                var response = data.d[1];
+
+                switch (response) {
+                    case "Success":
+                        $('#myModal').modal('show');
+                        info = "<p>Operacion exitosa</p>";
+                        $('#avisos').append(info);
+                        limpiar();
+                        listar();
+                        break;
+                    case undefined:
+                        alert("Error en la operacion.");
+                        break;
+                }
+
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+            }
+        });
+    } else {
+
+        $('#myModal').modal('show');
+        info = "<p>Por favor ingresa todos los datos</p>";
+        $('#avisos').append(info);
+
+    }
 }

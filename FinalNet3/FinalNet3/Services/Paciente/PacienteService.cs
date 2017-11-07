@@ -185,10 +185,6 @@ namespace FinalNet3.Services.Paciente
             return list;
         }
 
-
-
-
-
         public IList<string> LoadDepartamento(int id_pais)
         {
             throw new NotImplementedException();
@@ -208,5 +204,99 @@ namespace FinalNet3.Services.Paciente
         {
             throw new NotImplementedException();
         }
+
+        public IList<string> cobijarUsuario(int idPaciente, String documento)
+        {
+            List<String> list = new List<String>();
+
+            try
+            {
+                using (Conn = new Connection().Conexion)
+                {
+
+                    IDbCommand comm = Conn.CreateCommand();
+                    IDbDataParameter dp = comm.CreateParameter();
+                    comm.Connection = Conn;
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.CommandText = "acobijarUsuario";
+
+
+                    //AÑADIR PARAMETROS AL PROCEDIMIENTO ALMACENADO
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@idCliente";
+                    dp.Value = idPaciente;
+                    comm.Parameters.Add(dp);
+
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@Documento";
+                    dp.Value = documento;
+                    comm.Parameters.Add(dp);
+
+
+                    Conn.Open();
+                    IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
+                    int columns = dr.FieldCount;
+
+                    while (dr.Read())
+                    {
+                        for (int i = 0; i < columns; i++)
+                        {
+                            list.Add(dr.GetValue(i).ToString().Trim());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                list.Add(String.Format("Error: {0}", ex.Message));
+            }
+
+            return list;
+        }
+
+        public IList<string> obtenerIdPaciente(String usuario)
+        {
+            List<String> list = new List<String>();
+
+            try
+            {
+                using (Conn = new Connection().Conexion)
+                {
+
+                    IDbCommand comm = Conn.CreateCommand();
+                    IDbDataParameter dp = comm.CreateParameter();
+                    comm.Connection = Conn;
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.CommandText = "obtenerIdPaciente";
+
+
+                    //AÑADIR PARAMETROS AL PROCEDIMIENTO ALMACENADO
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@Usuario";
+                    dp.Value = usuario;
+                    comm.Parameters.Add(dp);
+
+
+                    Conn.Open();
+                    IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
+                    int columns = dr.FieldCount;
+
+                    while (dr.Read())
+                    {
+                        for (int i = 0; i < columns; i++)
+                        {
+                            list.Add(dr.GetValue(i).ToString().Trim());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                list.Add(String.Format("Error: {0}", ex.Message));
+            }
+
+            return list;
+        }
+
     }
 }
