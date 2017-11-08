@@ -429,75 +429,49 @@ function cargarIngresoEconomico() {
 }
 
 
-function obtenerIdPaciente() {
-    
 
-    var usuario = $("#txtUsuario").val();
-
-    if (usuario != "") {
-        $.ajax({
-            type: 'POST',
-            url: "/RegistrarPaciente/obtenerIdPaciente",
-            data: {
-                usuario: usuario
-            },
-            success: function (data) {
-
-                if (data.d.length > 0) {
-                    Session["idPaciente"] = data.d[0];
-                } else {
-                    alert("No se encuentra")
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
-            }
-        });
-    Session["idPaciente"] = model.UserName;
-
-}
-
-/* Acobijar un usuario beneficiario */
+    /* Acobijar un usuario beneficiario */
 function cobijarUsuario() {
 
-    var idPaciente = (Session["idPaciente"]);
-    var documento = $("#txtDocumento").val();
+        var idPaciente = 0;
+        var documento = $("#txtDocumento").val();
 
-    if (idPaciente > 0 && documento != "" ) {
-        $.ajax({
-            type: 'POST',
-            url: "/RegistrarPaciente/CobijarUsuario",
-            data: {
-                idPaciente: idPaciente, documento: documento
-            },
-            success: function (data) {
+        if (documento != "") {
+            $.ajax({
+                type: 'POST',
+                url: "/RegistrarPaciente/CobijarUsuario",
+                data: {
+                    idPaciente: idPaciente, documento: documento
+                },
+                success: function (data) {
 
-                var response = data.d[1];
+                    var response = data.d[1];
 
-                switch (response) {
-                    case "Success":
-                        $('#myModal').modal('show');
-                        info = "<p>Operacion exitosa</p>";
-                        $('#avisos').append(info);
-                        limpiar();
-                        listar();
-                        break;
-                    case undefined:
-                        alert("Error en la operacion.");
-                        break;
+                    switch (response) {
+                        case "Success":
+                            $('#myModal').modal('show');
+                            info = "<p>Operacion exitosa</p>";
+                            $('#avisos').append(info);
+                            limpiar();
+                            listar();
+                            break;
+                        case undefined:
+                            alert("Error en la operacion.");
+                            break;
+                    }
+
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
                 }
+            });
+        } else {
 
+            $('#myModal').modal('show');
+            info = "<p>Por favor ingresa todos los datos</p>";
+            $('#avisos').append(info);
 
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
-            }
-        });
-    } else {
-
-        $('#myModal').modal('show');
-        info = "<p>Por favor ingresa todos los datos</p>";
-        $('#avisos').append(info);
-
-    }
+        }
 }
+

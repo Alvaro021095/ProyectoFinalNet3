@@ -46,12 +46,15 @@ namespace FinalNet3.Controllers.Paciente
             return Json(new { d = info });
         }
 
-
-
+        
+        
         public ActionResult CobijarUsuario(int idPaciente, String documento)
         {
+
+            String idPac = (string)(Session["USER_ID"]);
+            int idPaci = Convert.ToInt32(idPac);
             /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
-            IEnumerable<String> info = ContractService.cobijarUsuario(idPaciente,documento);
+            IEnumerable<String> info = ContractService.cobijarUsuario(idPaci,documento);
             /*Lista temporal que contendra la respuesta que se le dara al cliente*/
             IList<String> res = new List<String>();
 
