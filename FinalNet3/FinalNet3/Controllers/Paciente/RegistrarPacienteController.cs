@@ -69,13 +69,23 @@ namespace FinalNet3.Controllers.Paciente
         }
 
 
-        public ActionResult obtenerIdPaciente(String usuario)
+        public ActionResult LoadMedico(int id_medico)
         {
             /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
-            IEnumerable<String> info = ContractService.obtenerIdPaciente(usuario);
-            /*Lista temporal que contendra la respuesta que se le dara al cliente*/
+            IEnumerable<String> info = ContractService.LoadMedico(id_medico);
+            /*Se para la lista de la respuesta a JSON*/
             return Json(new { d = info });
         }
+
+
+        public ActionResult LoadHorarioMedico(int medico)
+        {
+            /*Se recibe en una lista generica el resultado del login definida en el service y obligada por el contract*/
+            IEnumerable<String> info = ContractService.LoadHorarioMedico(medico);
+            /*Se para la lista de la respuesta a JSON*/
+            return Json(new { d = info });
+        }
+
 
     }
 }

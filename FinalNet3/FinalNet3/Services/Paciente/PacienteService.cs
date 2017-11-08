@@ -254,7 +254,7 @@ namespace FinalNet3.Services.Paciente
             return list;
         }
 
-        public IList<string> obtenerIdPaciente(String usuario)
+        public IList<string> LoadMedico(int id_medico)
         {
             List<String> list = new List<String>();
 
@@ -267,13 +267,59 @@ namespace FinalNet3.Services.Paciente
                     IDbDataParameter dp = comm.CreateParameter();
                     comm.Connection = Conn;
                     comm.CommandType = CommandType.StoredProcedure;
-                    comm.CommandText = "obtenerIdPaciente";
+                    comm.CommandText = "cargarMedico";
 
 
                     //AÑADIR PARAMETROS AL PROCEDIMIENTO ALMACENADO
                     dp = comm.CreateParameter();
-                    dp.ParameterName = "@Usuario";
-                    dp.Value = usuario;
+                    dp.ParameterName = "@IdTipoMedico";
+                    dp.Value = id_medico;
+                    comm.Parameters.Add(dp);
+
+
+                    Conn.Open();
+                    IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
+                    int columns = dr.FieldCount;
+
+                    while (dr.Read())
+                    {
+                        for (int i = 0; i < columns; i++)
+                        {
+                            list.Add(dr.GetValue(i).ToString().Trim());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                list.Add(String.Format("Error: {0}", ex.Message));
+            }
+
+            return list;
+        }
+
+
+
+        public IList<string> LoadHorarioMedico(int medico)
+        {
+            List<String> list = new List<String>();
+
+            try
+            {
+                using (Conn = new Connection().Conexion)
+                {
+
+                    IDbCommand comm = Conn.CreateCommand();
+                    IDbDataParameter dp = comm.CreateParameter();
+                    comm.Connection = Conn;
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.CommandText = "verHorarioMedico";
+
+
+                    //AÑADIR PARAMETROS AL PROCEDIMIENTO ALMACENADO
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@idMedico";
+                    dp.Value = medico;
                     comm.Parameters.Add(dp);
 
 
