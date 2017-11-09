@@ -344,5 +344,118 @@ namespace FinalNet3.Services.Paciente
             return list;
         }
 
+
+        public IList<string> verHistorialMedico(int idPaciente)
+        {
+
+            List<String> list = new List<String>();
+
+            try
+            {
+                using (Conn = new Connection().Conexion)
+                {
+
+                    IDbCommand comm = Conn.CreateCommand();
+                    IDbDataParameter dp = comm.CreateParameter();
+                    comm.Connection = Conn;
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.CommandText = "verHistorialMedico";
+
+
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@idCliente";
+                    dp.Value = idPaciente;
+                    comm.Parameters.Add(dp);
+
+                    Conn.Open();
+                    IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
+                    int columns = dr.FieldCount, rows = 0;
+
+                    while (dr.Read())
+                    {
+                        for (int i = 0; i < columns; i++)
+                        {
+                            list.Add(dr.GetValue(i).ToString().Trim());
+                        }
+
+                        rows++;
+                    }
+
+                    if (list.Count > 0)
+                    {
+                        list.Add(columns + "");
+                        list.Add(rows + "");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                list.Add(String.Format("Error: {0}", ex.Message));
+            }
+
+            return list;
+        }
+
+
+        public IList<string> SolicitarCita(int idPaciente, String idMedicoHorario, String numero, String fecha)
+        {
+
+            List<String> list = new List<String>();
+
+            try
+            {
+                using (Conn = new Connection().Conexion)
+                {
+
+                    IDbCommand comm = Conn.CreateCommand();
+                    IDbDataParameter dp = comm.CreateParameter();
+                    comm.Connection = Conn;
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.CommandText = "solicitarCita";
+
+
+                    //AÑADIR PARAMETROS AL PROCEDIMIENTO ALMACENADO
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@idCliente";
+                    dp.Value = idPaciente;
+                    comm.Parameters.Add(dp);
+
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@idMedicoHorario";
+                    dp.Value = idMedicoHorario;
+                    comm.Parameters.Add(dp);
+
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@Numero";
+                    dp.Value = numero;
+                    comm.Parameters.Add(dp);
+
+                    dp = comm.CreateParameter();
+                    dp.ParameterName = "@Fecha";
+                    dp.Value = fecha;
+                    comm.Parameters.Add(dp);
+
+                    Conn.Open();
+                    IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
+                    int columns = dr.FieldCount;
+
+                    while (dr.Read())
+                    {
+                        for (int i = 0; i < columns; i++)
+                        {
+                            list.Add(dr.GetValue(i).ToString().Trim());
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                list.Add(String.Format("Error: {0}", ex.Message));
+            }
+
+            return list;
+        }
+
     }
 }

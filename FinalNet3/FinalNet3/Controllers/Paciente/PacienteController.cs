@@ -28,5 +28,12 @@ namespace FinalNet3.Controllers.Paciente
             return ReturnViewOrRedirect();
         }
 
+
+        public ActionResult VerHistorialMedico()
+        {
+            /*Valida si se puede redireccinar la pagina solicitada o si retorna al index*/
+            return ReturnViewOrRedirect();
+        }
+
     }
 }

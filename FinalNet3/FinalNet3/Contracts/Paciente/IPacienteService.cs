@@ -22,6 +22,11 @@ namespace FinalNet3.Contracts.Paciente
         IList<String> LoadMedico(int id_medico);
 
         IList<String> LoadHorarioMedico(int medico);
+        IList<String> verHistorialMedico(int idPaciente);
+
+        IList<String> SolicitarCita(int idPaciente, String idMedicoHorario, String numero, String fecha);
+
+        
 
 
 

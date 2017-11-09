@@ -164,3 +164,51 @@ function cargarHorarioMedico(seleccion) {
     }
 
 }
+
+
+function solicitarCita() {
+
+    var idPaciente = 0;
+    var idMedicoHorario = $("#selIdMedicoHorario").val();
+    var numero = $("#txtNumero").val();
+    var fecha = $("#dtFechaCita").val();
+
+    if (idMedicoHorario != -1 && numero != "" && fecha != "" ) {
+        $.ajax({
+            type: 'POST',
+            url: "/RegistrarPaciente/SolicitarCita",
+            data: {
+                idPaciente: idPaciente, idMedicoHorario: idMedicoHorario,
+                numero: numero, fecha: fecha
+            },
+            success: function (data) {
+
+                var response = data.d[1];
+
+                switch (response) {
+                    case "Success":
+                        $('#myModal').modal('show');
+                        info = "<p>Operacion exitosa</p>";
+                        $('#avisos').append(info);
+                        limpiar();
+                        listar();
+                        break;
+                    case undefined:
+                        alert("Error en la operacion.");
+                        break;
+                }
+
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Error detectado: " + textStatus + "\nExcepcion: " + errorThrown);
+            }
+        });
+    } else {
+
+        $('#myModal').modal('show');
+        info = "<p>Por favor ingresa todos los datos</p>";
+        $('#avisos').append(info);
+
+    }
+}

@@ -205,7 +205,7 @@ namespace FinalNet3.Services.Administracion
         }
 
 
-        public IList<String> LoadTipoMedico()
+        public IList<string> LoadTipoMedico()
         {
 
             List<String> list = new List<String>();
