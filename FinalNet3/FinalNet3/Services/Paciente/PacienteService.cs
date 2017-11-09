@@ -279,7 +279,7 @@ namespace FinalNet3.Services.Paciente
 
                     Conn.Open();
                     IDataReader dr = comm.ExecuteReader(CommandBehavior.CloseConnection);
-                    int columns = dr.FieldCount;
+                    int columns = dr.FieldCount, rows = 0;
 
                     while (dr.Read())
                     {
@@ -287,6 +287,11 @@ namespace FinalNet3.Services.Paciente
                         {
                             list.Add(dr.GetValue(i).ToString().Trim());
                         }
+                    }
+                    if (list.Count > 0)
+                    {
+                        list.Add(columns + "");
+                        list.Add(rows + "");
                     }
                 }
             }

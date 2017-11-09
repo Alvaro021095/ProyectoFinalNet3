@@ -62,6 +62,7 @@ function cargarMedico(seleccion) {
 
                 if (data.d.length > 0) {
 
+
                     var qantity = (data.d.length);
                     var rows = parseInt(data.d[qantity - 1]);
                     var cols = parseInt(data.d[qantity - 2]);
@@ -80,11 +81,7 @@ function cargarMedico(seleccion) {
                         select.options[select.length] = opt;
                     }
 
-                    if (seleccion) {
-                        $("#selIdMedico").val(seleccion);
-                    } else {
-                        select.value = -1;
-                    }
+                    select.value = -1;
 
                 } else {
 
