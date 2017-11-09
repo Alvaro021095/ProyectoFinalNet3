@@ -26,6 +26,8 @@ namespace FinalNet3.Contracts.Paciente
 
         IList<String> SolicitarCita(int idPaciente, String idMedicoHorario, String numero, String fecha);
 
+        IList<String> buscarPacienteNoCotizante(String documento);
+
         
 
 

@@ -1,7 +1,7 @@
 ﻿var options = {
 
     url: function (phrase) {
-        return "api/countrySearch.php";
+        return "/RegistrarPaciente/buscarPacienteNoCotizante";
     },
 
     getValue: function (element) {

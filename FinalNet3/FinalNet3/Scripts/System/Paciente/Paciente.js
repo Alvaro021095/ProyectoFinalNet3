@@ -475,3 +475,88 @@ function cobijarUsuario() {
         }
 }
 
+//function buscarPacienteNoCotizante() {
+//    console.log('Historial.establecerBuscadorCliente()');
+
+//    var documento = $("#criterio-busqueda").val();
+
+
+//    //var options = {
+
+//    //    url: function (phrase) {
+//    //        return "/RegistrarPaciente/buscarPacienteNoCotizante/";
+//    //    },
+
+//    //    getValue: function (element) {
+//    //        return element.name;
+//    //    },
+
+//    //    ajaxSettings: {
+//    //        dataType: "json",
+//    //        method: "POST",
+//    //        data: {
+//    //            documento: documento
+//    //        }
+//    //    },
+
+//    //    preparePostData: function (data) {
+//    //        data.phrase = $("#criterio-busqueda").val();
+//    //        return data;
+//    //    },
+
+//    //    requestDelay: 400
+//    //};
+
+//    //$("#criterio-busqueda").easyAutocomplete(options);
+
+
+   
+
+    
+
+//    var options = {
+
+//        url: function (phrase) {
+//            return "/RegistrarPaciente/buscarPacienteNoCotizante/";
+//        },
+
+//        getValue: function (element) {
+//            return element.nombre;
+//        },
+
+//        ajaxSettings: {
+//            dataType: "json",
+//            method: "POST",
+//            data: {
+//                documento: documento
+//            }
+//        },
+
+//        preparePostData: function (data) {
+//            data.criterio = $("#criterio-busqueda").val();
+//            console.log(data);
+//            return data;
+//        },
+//        list: {
+
+//            onSelectItemEvent: function () {
+//                var value = $("#criterio-busqueda").getSelectedItemData().patients_id;
+//                console.log(value);
+//                $("#patients_id").val(value).trigger('input');
+//                $("#users_id").val($("#criterio-busqueda").getSelectedItemData().users_id).trigger('input');
+//                $("#identification").val($("#criterio-busqueda").getSelectedItemData().identification).trigger('input');
+
+//            }
+//        },
+//        requestDelay: 400,
+//        //theme: "plate-dark"
+//    };
+
+//    $("#criterio-busqueda").easyAutocomplete(options);
+//}
+
+//buscarPacienteNoCotizante();
+
+
+
+

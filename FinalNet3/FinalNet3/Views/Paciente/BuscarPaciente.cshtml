@@ -1,65 +1,95 @@
 ﻿@{
     ViewBag.Title = "BuscarPaciente";
 }
-
+@*<script defer src="@Url.Content("~/Scripts/Pluggins/EasyAutocomplete/jquery.easy-autocomplete.js")" type="text/javascript"></script>
+<link href="@Url.Content("~/Scripts/Pluggins/EasyAutocomplete/easy-autocomplete.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Scripts/Pluggins/EasyAutocomplete/maps/easy-autocomplete.min.css.map")" rel="stylesheet" type="text/css" />*@
 <script defer src="@Url.Content("~/Scripts/System/Paciente/Paciente.js")" type="text/javascript"></script>
+
+
+
+
 
 <h2>Paciente Beneficiario</h2>
 <input id="txtId" type="hidden" />
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="row clearfix">
-        <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="">
+@*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <form role="form" class="">
+
+        <input id="criterio-busqueda" />
+
+        @*<div class="form-group">
+            <label for="criterio-busqueda">Paciente:</label>
+            <div class="easy-autocomplete eac-plate-dark"><input class="form-control" id="criterio-busqueda" autocomplete="off" type="text"><div class="easy-autocomplete-container" id="eac-container-criterio-busqueda"><ul style="display: none;"></ul></div></div>
+            <input id="patients_id" style="display:none" ng-change="Historial.obtenerHistorial()" class="ng-pristine ng-untouched ng-valid" type="text">
+            <input id="users_id" style="display:none" class="ng-pristine ng-untouched ng-valid" type="text">
+            <input id="identification" type="hidden">
+            <div>
+                <button class="btn btn-info" style="display:flex; margin:auto; margin-top:0.5em" ng-click="Historial.obtenerHistorial()">
+                    BUSCAR
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+    </div>*@
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row clearfix">
+            <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="">
-                    <label>
-                        Buscar Paciente
-                    </label>
-                    <input class="form-control"
-                           id="txtDocumento" required />
+                    <div class="">
+                        <label>
+                            Buscar Paciente
+                        </label>
+                        <input class="form-control"
+                               id="txtDocumento" required />
+                    </div>
                 </div>
             </div>
         </div>
+
+    </div>
+    <br />
+    <div class="container">
+
+        <button type="button" class="btn btn-success" onclick="cobijarUsuario();">Cobijar Usuario</button>
+
     </div>
 
-</div>
-<br />
-<div class="container">
-
-    <button type="button" class="btn btn-success" onclick="cobijarUsuario();">Cobijar Usuario</button>
-
-</div>
-
-<br />
-<div class="container">
-    <h2>Lilstado</h2>
-</div>
-<div class="table-responsive" id="listado"></div>
+    <br />
+    <div class="container">
+        <h2>Lilstado</h2>
+    </div>
+    <div class="table-responsive" id="listado"></div>
 
 
-<div class="container">
-   <!-- <h2>Modal Example</h2>
-     Trigger the modal with a button 
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+    <div class="container">
+        <!-- <h2>Modal Example</h2>
+          Trigger the modal with a button
+         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                @*<div class="modal-header">*@
+                <!-- Modal content-->
+                <div class="modal-content">
+                    @*<div class="modal-header">*@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h1 class="modal-title">Aviso</h1>
-                @*</div>*@
-                <div class="modal-body">
-                    <span id="avisos"></span>
+                    @*</div>*@
+                    <div class="modal-body">
+                        <span id="avisos"></span>
+                    </div>
+                    <div class="row">
+                        @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                    </div>
                 </div>
-                <div class="row">
-                    @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
-                </div>
-            </div>
 
+            </div>
         </div>
+
     </div>
 
-</div>
+
+
+
