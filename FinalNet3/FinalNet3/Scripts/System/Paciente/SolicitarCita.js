@@ -68,7 +68,7 @@ function cargarMedico(seleccion) {
                     var cols = parseInt(data.d[qantity - 2]);
                     qantity -= 2;
 
-                    var select = document.getElementById("selIdMedico");
+                    var select = document.getElementById("selMedico");
 
                     while (select.length > 1) {
                         select.remove(select.length - 1);
@@ -79,6 +79,12 @@ function cargarMedico(seleccion) {
                     for (var k = 0; k < qantity; k += cols) {
                         opt = new Option(data.d[k + 1], data.d[k]);
                         select.options[select.length] = opt;
+                    }
+
+                    if (seleccion) {
+                        $("#selMedico").val(seleccion);
+                    } else {
+                        select.value = -1;
                     }
 
                     select.value = -1;
@@ -106,7 +112,7 @@ function cargarMedico(seleccion) {
 
 function cargarHorarioMedico(seleccion) {
 
-    var medico = $("#selIdMedico").val();
+    var medico = $("#selMedico").val();
 
     if (medico != -1) {
 
